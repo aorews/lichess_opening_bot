@@ -85,6 +85,11 @@ class Game(threading.Thread):
 
         print(self.username, self.color, self.opening, sep='\n')
 
+        self.client.bots.post_message(self.game_id, 'Please provide correct name of opening from lichess database! For example:')
+        self.client.bots.post_message(self.game_id, 'Italian Game: Deutz Gambit')
+        self.client.bots.post_message(self.game_id, 'or')
+        self.client.bots.post_message(self.game_id, 'Sicilian Defense: Hyperaccelerated Dragon')
+
         if opening is not None:
             if self.color == 'white':
                 self.move = 0
